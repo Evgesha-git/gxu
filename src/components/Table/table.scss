@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.columnFilter{
+    display: flex;
+    gap: 10px;
+    border: 1px solid #424242;
+    border-top: none;
+    padding: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.filterItem{
+    cursor: pointer;
+    border-radius: 3px;
+
+    &:hover{
+        background: #4242422b;
+    }
+}

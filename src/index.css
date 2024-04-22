@@ -1,13 +1,89 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+}
+
+table{
+  border: 1px solid #424242;
+  border-collapse: collapse;
+}
+
+tr, td, th{
+  border: 1px solid #424242;
+}
+
+.table {
+    border: 1px solid #424242;
+}
+
+.tr {
+    display: flex;
+    /* width: fit-content; */
+}
+.th,
+.td {
+    box-shadow: inset 0 0 0 1px #424242;
+    padding: 0.5rem;
+}
+.th {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(128, 128, 128, 0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.resizer {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5px;
+  background: #27bbff;
+  cursor: col-resize;
+  user-select: none;
+  touch-action: none;
+  border-radius: 6px;
+}
+.resizer.isResizing {
+  background: #2eff31;
+  opacity: 1;
+}
+*:hover > .resizer {
+  opacity: 1;
+}
+
+.status{
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-align: center;
+
+}
+
+.status.active{
+  background: rgb(72, 232, 72);
+}
+
+.status.end{
+  background: #fffb29;
+}
+
+.form{
+  padding: 40px 16px;
+}
+
+.inputRow{
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
 }
