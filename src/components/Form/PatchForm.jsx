@@ -31,12 +31,12 @@ const PatchForm = ({ formLines, id }) => {
     const initData = formLines.reduce((rez, item) => [...rez, { ...item, target_count: 0, distribution_count: 0, all_count: 0 }], []);
 
     const getDataPikerDate = (val) => {
-        if (typeof val === 'string'){
-            return val
-        }else {
-            return val["$d"].toLocaleDateString().replace(/(\d{2}).(\d{2}).(\d{4})/, "$3-$2-$1")
+        if (typeof val === "string") {
+            return val;
+        } else {
+            return val["$d"].toLocaleDateString().replace(/(\d{2}).(\d{2}).(\d{4})/, "$3-$2-$1");
         }
-    }
+    };
 
     const formHandler = (values) => {
         const user = {
@@ -56,10 +56,10 @@ const PatchForm = ({ formLines, id }) => {
             nsi_pers_indicate_id: 1,
             f_pers_young_spec_id: 1,
         };
-        if(idData){
+        if (idData) {
             patchDataItem(id, data, user);
         } else {
-            setDataItem(data, user)
+            setDataItem(data, user);
         }
     };
 
@@ -69,7 +69,7 @@ const PatchForm = ({ formLines, id }) => {
     }, []);
 
     return (
-        <Box className={'form'}>
+        <Box className={"form"}>
             {lineIdData && (
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <Formik
@@ -85,7 +85,7 @@ const PatchForm = ({ formLines, id }) => {
                     >
                         {({ values }) => (
                             <Form>
-                                <Box className={'inputRow'}>
+                                <Box className={"inputRow"}>
                                     <MyDatePicker
                                         label="Дата начала отчетного периода"
                                         name="rep_beg_period"
@@ -99,7 +99,7 @@ const PatchForm = ({ formLines, id }) => {
                                         renderInput={(params) => <TextField {...params} label={"Окончание"} />}
                                     />
                                 </Box>
-                                <Box className={'inputRow'}> 
+                                <Box className={"inputRow"}>
                                     <FormikTextField label="Имя пользователя который добавил запись" name="insert_user" />
                                     <FormikTextField label="ФИО и контактные данные сотрудника организации для связи" name="org_employee" />
                                 </Box>
@@ -119,7 +119,6 @@ const PatchForm = ({ formLines, id }) => {
                                         <tbody>
                                             <FieldArray name="data">
                                                 <>
-                                                    {console.log(values.data)}
                                                     {values.data.map((item, index) => (
                                                         <tr key={item.nsi_pers_young_spec_id}>
                                                             <td>

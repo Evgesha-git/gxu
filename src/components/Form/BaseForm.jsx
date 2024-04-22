@@ -46,7 +46,6 @@ const BaseForm = ({ formLines }) => {
             nsi_pers_indicate_id: 1,
             f_pers_young_spec_id: 1,
         };
-        console.log(dayjs(new Date()).format('YYYY-MM-DDThh:mm:ss.SSSSSSZ'));
         setDataItem(data, user);
     };
 
@@ -95,7 +94,6 @@ const BaseForm = ({ formLines }) => {
                                     <tbody>
                                         <FieldArray name="data">
                                             <>
-                                                {console.log(values.data)}
                                                 {values.data.map((item, index) => (
                                                     <tr key={item.nsi_pers_young_spec_id}>
                                                         <td>
